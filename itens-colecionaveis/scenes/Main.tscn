@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ctjjuj8fi11lb"]
+
+[ext_resource type="Script" uid="uid://dkpyxs6cvgta8" path="res://scripts/hud.gd" id="1_rvslj"]
+[ext_resource type="PackedScene" uid="uid://vp63ssjmvsj5" path="res://scenes/item.tscn" id="2_0bbpv"]
+
+[node name="HUD" type="CanvasLayer" unique_id=1255323311]
+script = ExtResource("1_rvslj")
+
+[node name="Contador" type="Label" parent="." unique_id=255839103]
+custom_minimum_size = Vector2(20, 20)
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Itens: 0"
+
+[node name="Item" parent="." unique_id=1167995665 instance=ExtResource("2_0bbpv")]
+position = Vector2(355, 301)
