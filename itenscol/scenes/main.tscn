@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dhuwwsh7atsis"]
+
+[ext_resource type="PackedScene" uid="uid://b2kmkxvc5gpv2" path="res://scenes/item.tscn" id="2_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://766jsikflxl" path="res://player.tscn" id="3_sugp2"]
+[ext_resource type="Script" uid="uid://c17on3qtlno3t" path="res://scripts/hud.gd" id="3_tbgi4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sugp2"]
+size = Vector2(38, 60)
+
+[node name="Main" type="Node2D" unique_id=695973251]
+
+[node name="Item" parent="." unique_id=133456959 instance=ExtResource("2_jyhfs")]
+position = Vector2(334, 319)
+scale = Vector2(0.3, 0.3)
+collision_layer = 3
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1380166231]
+script = ExtResource("3_tbgi4")
+
+[node name="Contador" type="Label" parent="HUD" unique_id=1731298666]
+custom_minimum_size = Vector2(20, 20)
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Itens: 0"
+
+[node name="Player" parent="." unique_id=389294508 instance=ExtResource("3_sugp2")]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player" unique_id=1206851543]
+position = Vector2(562, 320)
+shape = SubResource("RectangleShape2D_sugp2")
